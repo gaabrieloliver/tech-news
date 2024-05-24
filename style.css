@@ -167,6 +167,9 @@ footer {
 }
 
 @media (max-width: 800px) {
+    header > h1 {
+        text-align: center;
+    }
     
     header nav {
         margin-bottom: 15px;
@@ -185,9 +188,15 @@ footer {
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 400px) {
     body {
         text-align: center;
+        margin: 0;
+        background-color: tomato;
+    }
+
+    main {
+        padding: 0;
     }
 
     header nav {
@@ -195,6 +204,7 @@ footer {
     }
 
     h1 {
+        text-align: center;
         margin-top: 15px;
     }
 
@@ -203,7 +213,7 @@ footer {
     }
 
     img {
-        width: auto;
+        width: 100%;
     }
 
     ul li {

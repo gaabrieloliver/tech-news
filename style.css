@@ -23,8 +23,7 @@ body, h1, h2, p, a {
 }
 
 body {
-    font-family: 'Open Sans';
-    margin: auto; 
+    font-family: 'Open Sans'; 
     text-align: justify;  
 }
 
@@ -94,7 +93,7 @@ header > p {
 
 main {
     margin: 0 auto;
-    padding: 5rem 2rem;
+    padding: 5% 15%;
 
     /* margin: 0rem 30rem; */
 }

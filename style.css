@@ -1,222 +1,216 @@
 @charset "UTF-8";
 
+/*
+#c5ebd6
+#83e1ad
+#3ddc84
+#2fa866
+#1a5c37
+#063d1e
+*/
+
+/* Você pode definir variáveis CSS no nível do documento usando a pseudo-classe :root. Isso é útil para criar temas,
+centralizar valores repetidos e facilitar a manutenção do código. */
+
 @font-face {
     font-family: 'Idroid';
     src: url(fontes/idroid.otf) format('opentype');
     font-weight: 400, 600, 800;
 }
+
 @font-face {
     font-family: 'Open Sans';
     src: url(fontes/OpenSans-VariableFont_wdth\,wght.ttf);
     font-weight: 400, 600, 800;
 }
 
-html, body {
-    overflow-x: hidden;
+:root {
+    --cor0: #c5ebd6;
+    --cor1: #83e1ad;
+    --cor2: #3ddc84;
+    --cor3: #2fa866;
+    --cor4: #1a5c37;
+    --cor5: #063d1e;
+
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-destaque: 'Open Sans', cursive;
+    --fonte-secundaria: 'Idroid', cursive;
 }
 
-body, h1, h2, p, a {
-    text-decoration: none;
-    margin: 0;
-    padding: 0;
-    
+* {
+    margin: 0px;
+    padding: 0px;
 }
 
 body {
-    font-family: 'Open Sans'; 
-    text-align: justify;  
+    background-color: var(--cor0);
+    font-family: var(--fonte-padrao);
 }
 
-header > h1 {
-    font-size: 32px;
-    font-weight: 300;
-}
-
-h1 {
-    color: #005500;
-    font-size: 40px;
-    font-weight: 750;
-    letter-spacing: -2px;
-}
-
-
-h2 {
-    color: #1f2123;
-    font-weight: 700;
-    font-size: 24px;
-    letter-spacing: -1px;
-}
-
-article > p {
-    font-size: 18px;
-    color: #555555;
-    margin-bottom: 15px;
-}
-
-article p > span, a {
-    font-weight: bold;
-    color: #055c05;
+a.externo::after {
+    content: '\00A0\1F517';
 }
 
 header {
-    background: linear-gradient(0deg, rgba(26, 90, 55, 1) 0%, rgba(64, 130, 87, 1) 50%, rgba(90, 186, 123, 1) 100%);
-
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: center;
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5));
+    min-height: 150px;
     text-align: center;
-    flex-direction: row;
+    padding-top: 40px;
 }
 
-header > nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-}
-
-header > nav a {
-    font-size: 18px;
-    padding: 1rem;
-}
-
-header > h1, nav a{
-    color: #fff;
-    /* text-shadow: 1px 2px 4px black; */
+header > h1 {
+    color: white;
+    font-family: var(--fonte-destaque);
+    margin-bottom: 20px;
+    font-size: 3em;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.267);
 }
 
 header > p {
-    color: #fff;
-    padding: 2rem;
+    color: white;
+    font-family: var(--fonte-padrao);
+    font-size: 1.2em;
+    max-width: 600px;
+    margin: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.39);
+}
+
+nav {
+    background-color: var(--cor5);
+    padding: 10px;
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.192);
+}
+
+nav > a {
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition-duration: 0.5s;
+}
+
+nav > a:hover {
+    background-color: var(--cor3);
+    color: var(--cor5);
 }
 
 main {
-    margin: 0 auto;
-    padding: 5% 15%;
-
-    /* margin: 0rem 30rem; */
-}
-
-img, iframe {
-    display: block;
-    border-radius: 14px;
-}
-
-iframe {
+    min-width: 300px;
+    max-width: 1000px;
     margin: auto;
-    box-shadow: 1px 1px 20px 0px #9b9a9a;;
+    margin-bottom: 50px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.459);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+main h1 {
+    color: var(--cor5);
+    font-family: var(--fonte-secundaria);
+    font-size: 1.5em;
+}
+
+main h2 {
+    font-family: var(--fonte-secundaria);
+    color: var(--cor4);
+    font-size: 1.3em;
+}
+
+main p {
+    /* 15px 0px 15px 0px */
+    margin: 15px 0px;
+    text-align: justify;
+    text-indent: 30px;
+    line-height: 1.5em;
+    font-size: 1em;
+}
+
+main strong {
+    color: var(--cor4);
+    font-weight: bold;
+}
+
+ main a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--cor5);
+    background-color: var(--cor1);
+    padding: 2px 6px;
+    border-radius: 5px;
+}
+
+main a:hover {
+    background-color: #063d1e;
+    color: #83e1ad;
+    transition-duration: 0.5s;
+} 
+
+main img {
     width: 100%;
 }
 
-img {
-    margin: 15px auto;
+main img.bugdroid {
+    max-width: 350px;
+    display: block;
+    margin: auto;
 }
 
-ul {
-    display: inline-block;
+div.video {
+    /* background-color: #063d1e; */
+    margin: 0px -20px 30px -20px;
+    padding: 20px;
+    padding-bottom: 59%;
+    position: relative;
 }
 
-.bugdroid {
-    width: 20%;
+div.video > iframe {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
 }
 
-.listas1 {
-    background: #c5fadb;
-    border-radius: 14px;
+aside {
+    background-color: var(--cor1);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.26);
 }
 
-.listas1 p {
-    padding: 14px;
+aside > h3 {
+    color: white;
+    background-color: var(--cor4);
+    padding: 10px;
+    margin: -10px -10px 0px -10px;
+    border-radius: 10px 10px 0px 0px;
 }
 
-.listas1 .sub {
-    font-size: 32px;
-    letter-spacing: -2px;
-    font-weight: 700;
-    color: #fff;
-    background: #005500;
-    border-radius: 14px 14px 0px 0px;
-}
-
-.listas {
-    display: flex;
-    justify-content: center;
-    justify-content: space-around;
-    
+aside ul {
+    list-style-type: '\2714\00A0\00A0';
+    list-style-position: inside;
+    columns: 2;
 }
 
 footer {
-    background-color: #005500;
-    color: #fff;
+    background-color: var(--cor5);
+    color: white;
     text-align: center;
-    padding: 14px;
-}
-@media (max-width:1440px) {
-
-    h1 {
-        text-align: left;
-    }
-    main {
-        margin: 0 auto;
-    }
-
-    img {
-        width: 90%;
-    }
-
-    iframe {
-        width: 90%;
-    }
+    padding: 5px;
+    font-size: 0.8em;
 }
 
-@media (max-width: 800px) {
-    header > h1 {
-        text-align: center;
-    }
-    
-    header nav {
-        margin-bottom: 15px;
-    }
-
-    header nav > a {
-        padding: 1rem;
-    }
-
-    iframe {
-        width: 100%;
-    }
+footer a {
+    text-decoration: none;
+    color: white;
 }
 
-@media (max-width: 400px) {
-    body {
-        text-align: center;
-        margin: 0;
-    }
-
-    main {
-        padding: 0;
-    }
-
-    header nav {
-        margin-bottom: 0px;
-    }
-
-    h1 {
-        text-align: center;
-        margin-top: 15px;
-    }
-
-    iframe {
-        width: 100%;
-    }
-
-    img {
-        width: 100%;
-    }
-
-    ul li {
-        text-align: left;
-    }
-
+footer a:hover {
+    text-decoration: underline;
+    color: var(--cor1);
 }
